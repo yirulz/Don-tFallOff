@@ -2,28 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+namespace DontFallOff
 {
-    public float speed;
-    private Rigidbody rb;
-    private int count;
 
-    void Start()
+    public class PlayerController : MonoBehaviour
     {
-        rb = GetComponent<Rigidbody>();
-    }
+        public float speed;
+        private Rigidbody rb;
+        private int count;
 
-    void FixedUpdate()
-    {
-        //Set float for Horizontal and Vertical movement
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        void Start()
+        {
+            rb = GetComponent<Rigidbody>();
+        }
 
-        //Set a new vector 3 called movement to value of horizontal and vertical movements
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        void FixedUpdate()
+        {
+            //Set float for Horizontal and Vertical movement
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
 
-        //Add force to rigidbody
-        rb.AddForce(movement * speed);
+            //Set a new vector 3 called movement to value of horizontal and vertical movements
+            Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
+            //Add force to rigidbody
+            rb.AddForce(movement * speed);
+
+        }
     }
 }
