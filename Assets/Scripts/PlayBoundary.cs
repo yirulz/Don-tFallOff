@@ -9,8 +9,10 @@ namespace DontFallOff
     {
 
         public GameObject player;
-        
-         void OnTriggerExit(Collider other)
+       
+        private Vector3 respawnPoint = new Vector3 (0f, 0.5f, 0f);
+
+        void OnTriggerExit(Collider other)
         {
             if (other.gameObject.CompareTag("Balls"))
             {
@@ -18,7 +20,8 @@ namespace DontFallOff
             }
             if (other.gameObject.CompareTag("Player"))
             {
-                player.transform.position = new Vector3(0f, 0.5f, 0f);
+                player.transform.position = respawnPoint;
+               
             }
         }
 

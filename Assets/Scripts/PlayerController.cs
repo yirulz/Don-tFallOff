@@ -14,6 +14,7 @@ namespace DontFallOff
         void Start()
         {
             rb = GetComponent<Rigidbody>();
+            rb.velocity = Vector3.zero;
         }
 
         void FixedUpdate()

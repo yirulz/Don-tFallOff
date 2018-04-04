@@ -27,11 +27,11 @@ namespace DontFallOff
         // Update is called once per frame
         void Update()
         {
-            if (score >= 1)
+            if (score >= 5)
             {
                 alertText.text = "Well Done";
                 countDown -= Time.deltaTime;
-                countDownText.text = "Next level in: " + countDown;
+                countDownText.text = "Next level in: " + Mathf.RoundToInt(countDown);
 
             }
             if (countDown <= 0)

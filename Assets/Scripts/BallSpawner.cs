@@ -21,7 +21,7 @@ namespace DontFallOff
         public IEnumerator spawner()
         {
             //keep active
-            while (1 >= 0)
+            while (true)
             {
                 //return amount of time to wait in seconds
                 yield return new WaitForSeconds(1);
