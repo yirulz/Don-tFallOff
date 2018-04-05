@@ -8,7 +8,7 @@ namespace DontFallOff
     {
         public Transform waypointGroup;
         public float moveSpeed = 5f;
-        public float closeness = 1f; // how close before switching to new target
+        public float closeness = 1f;
 
         private Transform[] waypoints;
         private int currentIndex = 0;

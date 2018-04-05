@@ -17,8 +17,6 @@ namespace DontFallOff
             //rotate object with new vector 3 times time.deltatime
             transform.Rotate(new Vector3(15, 30, 45) * Time.deltaTime);
 
-            //If you collect 10 score cubes, display message saying you win and go to next level
-          
         }
 
         // When picked up destroy object and add to score

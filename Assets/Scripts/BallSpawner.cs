@@ -34,19 +34,19 @@ namespace DontFallOff
 
     void Spawn()
     {
-        //Makes a randomized egg index for array
+        //Makes a randomized ball index for array
         int randomBall = Random.Range(0, balls.Length);
 
-        //creates a random egg index
+        //creates a random ball index
         GameObject randBall = balls[randomBall];
 
         //Sets position as current position
         Vector3 position = transform.position;
 
-        // clone is now instantiating a egg from a random index from eggs
+        // clone is now instantiating a ball from a random index from eggs
         GameObject clone = Instantiate(randBall);
 
-        // set position of egg spawning
+        // set position of ball spawning
         clone.transform.position = position;
     }
 }

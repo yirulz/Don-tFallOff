@@ -14,12 +14,16 @@ namespace DontFallOff
 
         void OnTriggerExit(Collider other)
         {
+            //If any balls roll out of play boundary
             if (other.gameObject.CompareTag("Balls"))
             {
+                //Destroy the ball
                 Destroy(other.gameObject);
             }
+            //If player falls out of play boundary
             if (other.gameObject.CompareTag("Player"))
             {
+                //Respawn player
                 player.transform.position = respawnPoint;
                
             }
