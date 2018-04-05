@@ -8,8 +8,6 @@ namespace DontFallOff
     {
         public Transform waypointGroup;
         public float moveSpeed = 5f;
-        public float closeness = 1f;
-
         private Transform[] waypoints;
         private int currentIndex = 0;
 
@@ -36,26 +34,28 @@ namespace DontFallOff
         {
 
             Transform current = waypoints[currentIndex];
-
+            //Set position
             Vector3 position = transform.position;
+            //Identify direction
             Vector3 direction = current.position - position;
+            //Move in diretion at moveSpeed 
             position += direction.normalized * moveSpeed * Time.deltaTime;
-
+            //Setting position transform for next movement
             transform.position = position;
 
             float distance = Vector3.Distance(position, current.position);
+            
 
-            //If close enough to way point
-            if (distance <= closeness)
+            if (distance <= 1)
             {
                 // Switch to next waypoint
                 currentIndex++;
             }
 
-            //If the current index exceeds the amount of waypoints
+            //If index is greater then amount of waypoints
             if (currentIndex >= waypoints.Length)
             {
-                //Loop back to the start
+                //Set index back to 0
                 currentIndex = 0;
             }
 

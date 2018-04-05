@@ -25,7 +25,7 @@ namespace DontFallOff
             //If player enters the cube
             if (other.gameObject.CompareTag("Player"))
             {
-                //Destroy the pickup
+                //Destroy the pickup and add score
                 Destroy(this.gameObject);
                 score.score++;
             }
